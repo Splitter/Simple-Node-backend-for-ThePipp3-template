@@ -1,0 +1,31 @@
+section.about-section#about
+    div.row
+        div.about
+            //- About Section Header
+            div.section-header
+                h1= about.headerPartOne
+                    br
+                    | #{about.headerPartTwo}
+            //- About Section Label
+            div.about-section-label
+                span.section-label.right
+                    span= about.labelText
+                    span.line 
+                    span.section= about.labelNumber
+
+        //- About Text first paragraph
+        div.text-col(data-aos="flip-left")                        
+                p= about.textColOne
+            
+        //- About Images
+        div.img-col.right(data-aos="flip-right")
+            div
+                img( src=about.imgColOne )
+
+        div.img-col.d-none.d-md-block(data-aos="flip-left")
+            div
+                img( src=about.imgColTwo )
+                
+        //- About Section second paragraph
+        div.text-col.right(data-aos="flip-right")                        
+                p= about.textColTwo

@@ -1,0 +1,54 @@
+doctype html
+html( lang="en" )  
+    head
+
+        //- all head data including CSS includes
+        include ./includes/head
+    body
+        //- Navbar   
+        include ./includes/navbar
+        //- End Navbar
+
+        //- Main content 
+        main
+            section
+                //- These are what is shown in the lightbox
+                div.portfolio-details-container(id=portfolioItems._id) 
+                    div.portfolio-details-row
+                        //- portfolioItems Image
+                        div.portfolio-details-column
+                            div.port-details-image
+                                img(src=portfolioItems.imgLarge)
+                        //- portfolioItems Details
+                        div.portfolio-details-column
+                            div.port-details-content
+                                h4= portfolioItems.title
+                                p= portfolioItems.desc
+                            div.port-details-list
+                                ul
+                                    li
+                                        h6 Project Details:
+                                    li
+                                        span Skill :
+                                        |  #{portfolioItems.skills}
+                                    li
+                                        span Categories :
+                                        |  #{portfolioItems.category}
+                                    li
+                                        a(href=portfolioItems.link) #{portfolioItems.linkText} ▸
+        
+
+        //- End Main content
+
+        //- Footer
+        include ./includes/footer
+        //- End Footer
+
+        //- Overlay for navigation shown when hamburger icon clicked
+        div.nav-overlay 
+            div.nav-overlay-white
+                div.nav-overlay-white-inner
+        //- End Overlay
+
+        //- javascript includes
+        include ./includes/scripts

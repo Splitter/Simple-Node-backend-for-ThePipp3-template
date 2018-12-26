@@ -1,0 +1,68 @@
+body,html{
+    width:100vw;
+    padding:0;
+    margin:0;
+    background:$primary;
+    overflow-x:hidden;
+    color:$white;
+}
+
+main{
+    padding-top:100px;
+}
+// all sections are bootstrap containers
+section{
+    @include make-container();
+    @include make-container-max-widths();
+}
+// rows are bootstrap rows
+.row{
+    @include make-row();
+}
+
+// Background triangle effect styling 
+.triangle-down {
+    position: absolute;
+    top:0;
+    left:-10vw;
+    width: 0; 
+    height: 0; 
+    border-left: 80vw solid transparent;
+    border-right: 80vw solid transparent;    
+    border-top: 80vw solid rgba($white,0.1);
+}  
+.triangle-left {
+    position: absolute;
+    right:0;
+    top:center;
+    width: 0; 
+    height: 0; 
+    border-top: 80vw solid transparent;
+    border-bottom: 80vw solid transparent;     
+    border-right:80vw solid rgba($white,0.1); 
+}
+.triangle-right {
+    position: absolute;
+    left:0;
+    top:center;
+    width: 0; 
+    height: 0; 
+    border-top: 80vw solid transparent;
+    border-bottom: 80vw solid transparent;    
+    border-left: 80vw solid rgba($white,0.1);
+}
+
+.error{
+    text-align:center;
+    display:block;
+    width: 100%;;
+    h1{
+        display:block;
+        font-size:6em;
+        color:$white;
+    }
+    p{
+        display:block;
+        width: 100%;;
+    }
+}

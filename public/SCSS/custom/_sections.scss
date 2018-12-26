@@ -1,0 +1,169 @@
+//stylings either generalized for all sections or live outside of sections
+
+// Text header for sections
+.section-header{
+    position: relative;
+    width:100%;
+    h1{
+        //alternate from left to right positioning
+        &.right{
+            position: absolute;
+            right:0;
+            text-align: right;
+        }
+        line-height:1em;
+    }
+}
+
+//Small section labels
+.section-label{
+    position: absolute;
+    left:-6em;
+    top:15em;
+    font-size:0.85em;
+    color:$white;
+    display: block;
+    transform: rotate(-90deg);
+    min-width:15em;
+    letter-spacing: 0.2em;
+    background:rgba($white,0.05);
+    padding:0 0 0.4em 1em;
+    @include media-breakpoint-up(sm) {
+        left:-7em;
+    }
+    .line{
+        display:inline-flex;
+        width:6em;
+        height:0%;
+        top:0;
+        position:relative;
+        vertical-align: top;
+        border-bottom:1px solid $white;
+        margin:1.1em 1.6em 0 0.7em;
+    }
+    .section{
+        position:relative;
+        display: inline-block;
+        font-size:1.3em;
+        transform: rotate(90deg);
+        letter-spacing: 0em;
+        padding-left:0.4em;
+    }
+    &.right{
+        position: absolute;
+        left: auto;
+        right:-7em;
+        @include media-breakpoint-up(sm) {
+            right:-8em;
+        }
+    }
+    &.center{
+        position: absolute;
+        top:0;
+        left: 50%;
+        transform: rotate(-90deg) translateX(-50%);
+        background:none;
+    }
+    
+}
+
+// Section seperator - style one
+.seperator-1{
+    @include make-container();
+    @include make-container-max-widths();
+    margin-top:0em;
+    padding:0;
+    height:250px;
+    @include media-breakpoint-up(lg) {
+        height:400px;
+    }
+    div{
+        @include center-horizontal();
+        width:110%;
+        height:150px;
+        @include media-breakpoint-up(xl) {
+            margin-top:200px;
+        }
+        border-bottom:1px solid rgba($white,0.6);
+        border-right:1px solid rgba($white,0.6);
+        &:after{
+            content:'';
+            position: relative;
+            display: block;
+            top:100%;
+            left:0;
+            width:100%;
+            height:200px;
+            border-left:1px solid rgba($white,0.6);
+        }    
+    }
+    //third seperator style is just flipped version of first
+    .flip{
+        border-bottom:1px solid rgba($white,0.6);
+        border-right:None;
+        border-left:1px solid rgba($white,0.6);
+        @include media-breakpoint-up(xl) {
+            margin-top:80px;
+        }
+        &:after{
+            border-left:None;
+            border-right:1px solid rgba($white,0.6);
+        }
+    }
+}
+
+// Section seperator - style two
+.seperator-2{
+    @include make-container();
+    @include make-container-max-widths();
+    margin-top:0em;
+    padding:0;
+    height:100px;
+    @include media-breakpoint-up(lg) {
+        margin-top:16em;
+        margin-bottom:5em;
+    }
+    .seperator-inner{
+        @include center-horizontal();
+        width:110%;
+        height:100px;
+        border-top:1px solid rgba($white,0.6);
+        margin-top:100px; 
+        @include media-breakpoint-up(lg) {
+            margin-top:150px;
+        }
+        &:after{
+            content:'';
+            position: relative;
+            display: block;
+            top:-60px;
+            left:50%;
+            width:50%;
+            height:40px;
+            border-left:1px solid rgba($white,0.6);
+        }   
+        &:before{
+            content:'';
+            position: relative;
+            display: block;
+            top:-10px;
+            left:50%;
+            transform:translateX(40px);
+            width:50%;
+            height:20px;
+            border-left:1px solid rgba($white,0.6);
+        }   
+        div{
+            position: relative;
+            display: block;
+            width:1px;
+            height:20px;
+            left:50%;
+            top:-30px;
+            border-left:1px solid rgba($white,0.6);
+            transform:translateX(-40px);
+        }
+    }
+
+}
+    

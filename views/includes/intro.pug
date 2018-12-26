@@ -1,0 +1,27 @@
+section.intro-section#intro
+    div.row 
+        div.intro
+            //- Intro Label
+            div.intro-section-label
+                span.section-label
+                    span= intro.labelText
+                    span.line 
+                    span.section= intro.labelNumber
+
+            //- Intro Heading
+            div.intro-text-heading   
+                span.intro-text-whois(data-aos="flip-left")= intro.headerPartOne
+                span.intro-text-the(data-aos="flip-left")= intro.headerPartTwo
+                h1(data-aos="flip-right")= intro.headerPartThree
+            //- Intro Body
+            div.intro-text-body
+                div
+                    p(data-aos="flip-right")= intro.bodyText         
+                    a.button(data-aos="fade-up-right" href=intro.linkOne )= intro.linkOneText
+                    a.button(data-aos="fade-up-left" target="_blank" href=intro.linkTwo )= intro.linkTwoText
+    //- Scroll down hint
+    div.row 
+        div.intro-scroll-down
+            div
+                span 
+                    | scroll down

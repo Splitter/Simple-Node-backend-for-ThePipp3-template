@@ -1,0 +1,24 @@
+// Dependencies
+@import "variables";
+@import "vendor";
+@import "functions";
+@import "mixins";
+
+// Custom Base
+@import "custom/animations";
+@import "custom/elements";
+@import "custom/page-layout";
+
+//Pages and Modules
+@import "custom/navbar";
+@import "custom/sections";
+@import "custom/footer";
+
+@import "custom/intro";
+@import "custom/about";
+@import "custom/portfolio-details";
+@import "custom/portfolio";
+@import "custom/contact";
+
+
+

@@ -1,0 +1,55 @@
+
+section.portfolio-section#work            
+    div.row          
+        div.portfolio   
+            //- Portfolio Section Header
+            div.section-header
+                h1.right= portfolio.headerPartOne
+                    br
+                    | #{portfolio.headerPartTwo}
+            //- Portfolio Section Label
+            div.portfolio-section-label
+                span.section-label
+                    span= portfolio.labelText
+                    span.line 
+                    span.section= portfolio.labelNumber
+
+    //- Portfolio Items
+    div.row.portfolio-items(data-aos="flip-right" data-aos-offset="300")      
+        //- Cycle through all portfolio items
+        each item, idx in portfolioItems
+            //- show first four items
+            if idx < 4
+                div.portfolio-item
+                    div
+                        img( src=item.img )
+                        div.link-wrap
+                            a.portfolio-item-link( data-featherlight="#"+item._id href="portfolio/"+item._id) 
+                                h6= item.title
+                                div.link-icon-outer
+                                    div.link-icon-inner
+
+            //- hide items after 4 displayed
+            else
+                div.portfolio-item.display-none
+                    div
+                        img( src=item.img )
+                        div.link-wrap
+                            a.portfolio-item-link( data-featherlight="#"+item._id href=item._id+".html" ) 
+                                h6= item.title
+                                div.link-icon-outer
+                                    div.link-icon-inner
+    //- portfolio navigation
+    div.row          
+        div.portfolio-arrows
+            a(href="").portfolio-arrow-left
+            a(href="").portfolio-arrow-right
+    div.row 
+        div.portfolio-arrow-hint
+            div
+                span 
+                    | view more
+
+
+
+

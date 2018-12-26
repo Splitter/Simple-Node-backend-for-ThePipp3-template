@@ -1,0 +1,44 @@
+section.contact-section#contact
+    div.row
+        div.contact
+            //- Contact Section Header
+            div.section-header
+                h1= contact.headerPartOne
+                    br
+                    | #{contact.headerPartTwo}
+            //- Contact Section Label
+            div.about-section-label
+                span.section-label.right
+                    span= contact.labelText
+                    span.line 
+                    span.section= contact.labelNumber
+
+    div.row.contact-wrap    
+        //- Contact Text column    
+        div.contact-col(data-aos="flip-left")    
+            p= contact.descText
+        //- Contact Form
+        div.contact-col(data-aos="flip-right") 
+            if(errors)
+                //-div.success-box
+                div.error-box
+                    ul
+                    each name, data in errors
+                        li= name
+
+            if(success)
+                div.success-box= success
+                    
+            div.form-area
+                form(role="form" action="contact" method="post")
+                    div.form-group
+                        input#name(type="text" class="form-control" name="name" placeholder="Name" required)
+                    div.form-group
+                        input#email(type="text" class="form-control" name="email" placeholder="Email" required)
+                    div.form-group
+                        input#mobile(type="text" class="form-control" name="mobile" placeholder="Mobile Number" required)
+                    div.form-group
+                        input#subject(type="text" class="form-control" name="subject" placeholder="Subject" required)
+                    div.form-group
+                        textarea#message(type="textarea" name="message" placeholder="Message" maxlength="140" rows="7")
+                    button#submit( type="submit" name="submit") Submit Form

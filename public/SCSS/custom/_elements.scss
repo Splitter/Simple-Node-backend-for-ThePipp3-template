@@ -1,0 +1,69 @@
+
+//  Wire One font is much smaller then typical fonts so headings need to be larger then Bootstrap defaults
+%headings {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    position: relative;
+}
+
+h1 {
+    @extend %headings;
+    font-size: $h1-font-size;
+}
+
+h2 {
+    @extend %headings;
+    font-size: $h2-font-size;
+}
+
+h3 {
+    @extend %headings;
+    font-size: $h3-font-size;
+}
+
+h4 {
+    @extend %headings;
+    font-size: $h4-font-size;
+}
+
+h5 {
+    @extend %headings;
+    font-size: $h5-font-size;
+}
+
+h6 {
+    @extend %headings;
+    font-size: $h6-font-size;
+}
+
+
+//default paragraph override
+p{
+    font-size:1.2em;
+    letter-spacing: 0.09em;
+}
+
+//generic bg to make positioning stand out(remember to remove)
+.test{
+    background:red;
+}
+
+//info boxes 
+.success-box{
+    background:#a6eac5;
+    border: 1px solid #0f6336;
+    padding:1.5em;
+    color:#0f6336;
+    margin-bottom:2em;
+    margin-right: 2em;
+}
+.error-box{
+    background:#f79e9e;
+    border: 1px solid #831313;
+    padding:1.5em;
+    color:#831313;
+    margin-bottom:2em;
+    margin-right: 2em;
+}

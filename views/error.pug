@@ -1,0 +1,34 @@
+doctype html
+html( lang="en" )  
+    head
+
+        //- all head data including CSS includes
+        include ./includes/head
+    body
+        //- Navbar   
+        include ./includes/navbar
+        //- End Navbar
+
+        //- Main content 
+        main
+            section
+                div.row.error
+                    h1= error.status
+                    p= error.message
+                    
+        
+
+        //- End Main content
+
+        //- Footer
+        include ./includes/footer
+        //- End Footer
+
+        //- Overlay for navigation shown when hamburger icon clicked
+        div.nav-overlay 
+            div.nav-overlay-white
+                div.nav-overlay-white-inner
+        //- End Overlay
+
+        //- javascript includes
+        include ./includes/scripts

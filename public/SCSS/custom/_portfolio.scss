@@ -1,0 +1,204 @@
+.portfolio-section{
+    
+    //wrapper div is a full width column 
+            //with nested columns inside
+    .portfolio{
+        @include make-col-ready();
+        @include media-breakpoint-up(xs) {
+            @include make-col(12);
+        }
+        padding:0;
+        margin:0;
+        //need to adjust label position a little
+        .portfolio-section-label{
+            .section-label{
+                left:-8.5em;
+                @include media-breakpoint-up(md) {
+                    left:-11em;
+                }
+            }
+        }
+    }
+    .portfolio-items{
+        margin-top:140px;
+        @include media-breakpoint-up(lg) {
+            margin-top:180px;
+        }
+        // individual portfolio items
+        .portfolio-item{
+            margin-top:3.5em;
+            &.display-none{
+                display:none;
+            }
+            div{
+                background: $black;
+            }
+            //2 column layout
+            @include make-col-ready();
+            @include media-breakpoint-up(xs) {
+                @include make-col(12);
+            }
+            @include media-breakpoint-up(lg) {
+                @include make-col(6);
+            }
+            //Image is full adjust to size of column
+                //Images should have a ratio similar to 600x350 so everything fits right
+            img{
+                width:100%;
+                transition: 0.5s all ease-in-out;
+            }
+            //all content above image is wrapped in a div
+            .link-wrap{
+                position: absolute;
+                bottom:40px;
+                left:12%;
+                width:76%;
+                height:125px;
+                transition: 0.2s all ease-in-out;
+                &:after, &:before{
+                    
+                    transition: 0.2s all ease-in-out;
+                }
+                @include media-breakpoint-up(sm){
+                    
+                    @include underlays();
+                }
+                @include media-breakpoint-up(md) {
+                    width:82%;
+                    left:9%;
+                }
+                @include media-breakpoint-up(lg) {
+                    width:74%;
+                    left:13%;
+                }
+                @include media-breakpoint-up(xl) {
+                    width:78%;
+                    left:11%;
+                }
+                //link inside adjusted to size of parent and contains rest of content
+                a{  
+                    position: relative;
+                    left:1;
+                    z-index: 1;
+                    display:block;
+                    height:100%;
+                    width:100%;
+                    background:$primary;
+                    text-align:center;
+                    h6{
+                        padding-top:1em;
+                        font-size:1.3em;
+                    }
+                    .link-icon-outer{
+                        width:30px;
+                        height:30px;
+                        background:url('../Images/link-icon-bg.png');
+                        background-size: 100%;
+                        margin-top:15px;
+                        @include center-horizontal();
+                        .link-icon-inner{
+                            position: absolute;
+                            width:18px;
+                            height:18px;
+                            top:-4px;
+                            right:-3px;
+                            background:url('../Images/link-icon-inner.png');
+                            background-size: 100%;
+                        }
+                    }
+                }
+            }
+            &:hover{
+                img{
+                    opacity: 0.5;
+                }
+                .link-wrap{
+                    &:after{
+                        transform:translateX(142%) rotate(180deg);
+                    }
+                    &:before{
+                        transform:translateX(-142%) rotate(180deg);
+                    }
+                    @include media-breakpoint-up(md) {
+                        &:after{
+                            transform:translateX(129%) rotate(180deg);
+                        }
+                        &:before{
+                            transform:translateX(-129%) rotate(180deg);
+                        }                        
+                    }
+                    @include media-breakpoint-up(lg) {
+                        &:after{
+                            transform:translateX(147%) rotate(180deg);
+                        }
+                        &:before{
+                            transform:translateX(-147%) rotate(180deg);
+                        }
+                    }
+                    @include media-breakpoint-up(xl) {
+                        &:after{
+                            transform:translateX(138%) rotate(180deg);
+                        }
+                        &:before{
+                            transform:translateX(-138%) rotate(180deg);
+                        }
+                        
+                    }
+                    a{                    
+                        .link-icon-outer{
+                            .link-icon-inner{
+                                animation: bounce-icon-arrow 1s infinite;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Navigation arrrows
+    .portfolio-arrows{
+        margin-top:5em;
+        @include center-horizontal();
+        .portfolio-arrow-right{
+            width:50px;
+            height:80px;
+            background:$white;
+            margin-left:30px;
+            display: inline-block;
+            background:top left url(../Images/arrow-right.png);
+            opacity:0.5;
+            &:hover{
+                background:top left url(../Images/arrow-right-hover.png);
+            }
+        }
+        .portfolio-arrow-left{
+            width:50px;
+            height:80px;
+            background:$white;
+            display: inline-block;
+            background:top left url(../Images/arrow-left.png);
+            opacity:0.5;
+            &:hover{
+                background:top left url(../Images/arrow-left-hover.png);
+            }
+        }
+    }
+    //Navigation hint
+    .portfolio-arrow-hint{
+        width:100px;
+        height:30px;
+        border-left:1px solid rgba($white,0.4);
+        border-bottom:1px solid rgba($white,0.4);
+        margin-left:50px;
+        margin-top:1em;
+        @include center-horizontal();
+        span{
+            display:block;
+            margin-left:120px;
+            margin-top:15px;
+            width:150px;
+            animation: bounce-scale-portfolio 2s infinite;
+        }
+    }
+}

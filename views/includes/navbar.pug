@@ -1,0 +1,21 @@
+
+nav.navbar
+    //- Logo 
+    a.logo-link( href=page.url+"#intro")
+        h1.logo= navbar.logoTextOne
+            span= navbar.logoTextTwo
+    //- Navbar links
+    ul.navbar-links
+        each link in navbar.links
+            li
+                a( href=page.url+link.link )= link.name
+        
+    //- hamburger icon
+    button.hamburger.cross
+        span.hamburger-line
+        span.hamburger-line
+        span.hamburger-line
+
+
+
+        

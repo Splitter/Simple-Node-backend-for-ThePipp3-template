@@ -1,0 +1,61 @@
+doctype html
+html( lang="en" )  
+    head
+
+        //- all head data including CSS includes
+        include ./includes/head
+    body
+        //- Navbar   
+        include ./includes/navbar
+        //- End Navbar
+
+        //- Body Background effect - triangles
+        div.triangle-down
+        div.triangle-left
+        div.triangle-right
+
+        //- Main content 
+        main
+            //- Intro Section            
+            include ./includes/intro
+            //- End Intro Section
+
+            //- Section Seperator
+            div.seperator-1
+                div
+
+            //- About Section
+            include ./includes/about
+            //- End About Section
+            
+            //- Section Seperator
+            div.seperator-2
+                div.seperator-inner
+                    div
+
+            //- Portfolio Section
+            include ./includes/portfolio
+            //- End Portfolio Section
+
+            //- Section Seperator
+            div.seperator-1
+                div.flip
+
+            //- Contact Section
+            include ./includes/contact
+            //- End Contact Section
+        //- End Main content
+
+        //- Footer
+        include ./includes/footer
+        //- End Footer
+
+        //- Overlay for navigation shown when hamburger icon clicked
+        div.nav-overlay 
+            div.nav-overlay-white
+                div.nav-overlay-white-inner
+        //- End Overlay
+
+        include ./includes/portfolio-details
+        //- javascript includes
+        include ./includes/scripts

@@ -1,0 +1,35 @@
+{
+  "name": "the-pipp",
+  "version": "1.0.0",
+  "description": "Simple Node/Express/Keystone backend for ThePipp3 template",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "postinstall": "node install.js",
+    "compile-css": "node-sass --include-path sass public/scss/main.scss public/css/main.css",
+    "test": "mocha"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "pug",
+    "sass",
+    "bootstrap"
+  ],
+  "author": "Mike Pippin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "keystone": "^4.0.0",
+    "mongoose": "^5.4.0",
+    "nodemailer": "^4.7.0",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9"
+  }
+}

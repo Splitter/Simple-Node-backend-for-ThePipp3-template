@@ -1,0 +1,13 @@
+.section-header {
+  position: relative;
+  width: 100%; }
+  .section-header h1 {
+    line-height: 1em; }
+    .section-header h1.right {
+      position: absolute;
+      right: 0;
+      text-align: right; }
+
+
+
+/*# sourceMappingURL=_sections.css.map */

@@ -1,0 +1,85 @@
+.portfolio-details-container {    
+    @include make-container();
+    @include make-container-max-widths();
+    
+    .portfolio-details-row{
+        @include make-row();
+    }
+    
+    .portfolio-details-column{
+        // two column layout
+        @include make-col-ready();
+        @include media-breakpoint-up(lg) {
+            @include make-col(6);
+        }
+    }
+    //header and paragraph styling
+    .port-details-content {
+        
+        p{
+            background: rgba($white,0.1);
+            padding:1.5vw 2vw;
+            color : $white;
+            font-size:1.2em;
+        }
+        h4{
+            margin-left: 2vw;
+            margin-bottom:1em;
+            margin-top:7vw;
+        }
+    }
+    // list of skills, categories and download buttom
+    .port-details-list{
+        margin-top:2vw;
+        ul{
+            list-style: none;
+            padding:0;
+            margin:0;
+            li{
+                margin: 1vh 2vw;                
+                span{
+                    font-weight: bold;
+                    color: $dark-blue;
+                }
+                
+                h6{
+                    font-size:1.6em;
+                }                
+                
+                #{$links}{
+                    position: relative;
+                    display: inline-block;
+                    width:170px;
+                    font-size:0.9em;
+                    color:$white;
+                    padding:0.75em;
+                    margin:2em 0 0;
+                    text-decoration: none;
+                    font-family: $headings-font-family;
+                    background:linear-gradient(to right, rgba($white,0.1), rgba($white,0.02));
+                    &:after{
+                        content:'';
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        height:100%;
+                        opacity:0;
+                        background:linear-gradient(to right, darken($primary,5%), rgba( darken($primary,5%),0.02));
+                        transition:all 0.6s ease-out;
+                    }
+                }
+                #{$links-hover}:after{
+                    opacity:1;
+                    width:0;
+                    left:100%;
+                }                
+            }
+        }        
+    }
+    //Image for item
+    .port-details-image img {
+        width:100%;
+        margin-top:7vw;
+    } 
+}

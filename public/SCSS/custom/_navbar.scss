@@ -1,0 +1,137 @@
+.navbar{
+    padding:1em 0.5em ;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; // allow us to do the line break for collapsing content
+    align-items: center;
+    justify-content: space-between;
+    z-index: 4;    
+    background: $primary;
+    @include media-breakpoint-up(lg) {
+        padding:2em ;
+        background: none;
+    }
+    //Links are vertical along left edge - then hidden by javascript(degrades gracefully)
+    //Position and animation is done in javascript for full screen menu animation
+    .navbar-links{
+        position: fixed;
+        top:50px;
+        left:20px;
+        list-style: none;
+        padding:0;
+        margin:0;
+        transition: all 0.2s ease-in-out;
+        @include media-breakpoint-up(md) {
+            top:100px;
+        }
+        li{
+            transform: rotate(-90deg);
+            height:100px;
+            #{$links}{
+                position: relative;
+                display:block;
+                height:auto;
+                font-size: 1em;
+                color:$white;
+                top:1em;
+                @include media-breakpoint-up(md) {
+                    top:1.8em;
+                }
+            }
+            a:hover{
+                color: lighten($middle-blue , 35%) !important;
+            }
+        }
+    }
+    //Hamburger icon
+    .hamburger{
+        border: none;
+        padding: 0;
+        background: none;
+        width:40px;
+        margin-top:0.3em;
+        outline:0;
+        //Made of 3 individual divs with white background
+        .hamburger-line{
+            margin-bottom:0.6em;
+            display: block;
+            height:0.2em;
+            background:$white;
+            transition: all 0.2s ease-in-out;
+            transform-origin: center center;
+            //transforms hamburger into X icon
+            &.crossed{
+                &:nth-child(1){
+                    transform: rotate(45deg) translateY(17px) translateX(17px) !important;
+                }
+                &:nth-child(2){
+                    opacity:0 !important;
+                }
+                &:nth-child(3){
+                    transform: rotate(-45deg) !important;
+                }
+            }
+        }
+        // on hover - top and bottom icons grow and middle shrinks
+        &:hover{
+            outline:0;
+            .hamburger-line{
+                &:nth-child(1){
+                    transform: translateX(0) translateY(-5px) scaleX(1.2);
+                }
+                &:nth-child(2){
+                    transform: scaleX(0.9) ;
+                }
+                &:nth-child(3){
+                    transform: translateX(0) translateY(5px) scaleX(1.2) ;
+                }
+            }
+        
+        }
+    }
+    //logo
+    .logo{
+        margin-top:-0.3em;
+        color:$white;
+        font-size: 2em;
+        font-weight:50;
+        span{
+            position: absolute;
+            display:inline-block;
+            font-size:1.4em;
+            top:0.12em;
+            font-weight:bold;
+        }
+    }
+}
+
+//The full screen overlay revealed by javascript when hamburger icon clicked
+.nav-overlay{
+    width:0%;
+    height:100%;
+    background:darken($primary , 15%);
+    display: block;
+    position: fixed;
+    border:solid 1px $white;
+    top:0;
+    left:0;
+    z-index: 3;
+    transition: all 0.5s linear;
+    .nav-overlay-white{
+        width:650px;
+        height: 100%;
+        background:rgba($white,0.2);
+        position: absolute;
+        top:0;
+        right:0;
+        .nav-overlay-white-inner{
+            width:390px;
+            height: 100%;
+            background:$white;
+            position: absolute;
+            top:0;
+            right:0;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+.about-section{
+    //wrapper div is a full width column 
+            //with nested columns inside
+    .about{
+        @include make-col-ready();
+        @include media-breakpoint-up(xs) {
+            @include make-col(12);
+        }
+        padding:0;
+        margin:0;
+    }
+    // columns with text
+    .text-col{
+        margin-top:4em;
+        @include make-col-ready();
+        @include media-breakpoint-up(xs) {
+            @include make-col(12);
+        }
+        @include media-breakpoint-up(md) {
+            @include make-col(7);
+            &.right{
+                margin-top:4.5em;
+            }
+        }
+    }
+    //image columns
+    .img-col{
+        margin-top:3em;
+        position: relative;
+        @include make-col-ready();
+        @include media-breakpoint-up(xs) {
+            @include make-col(12);
+        }
+        @include media-breakpoint-up(md) {
+            @include make-col(4);
+            margin-top:5em;
+        }
+        @include media-breakpoint-up(xl) {
+            margin-top:0;
+        }
+        div{
+            background:$middle-blue;
+            margin:0;
+            position: relative;
+            img{
+                width:100%;
+                position: relative;
+                top:0;
+                left:1;
+                z-index: 1;
+                display:block;
+            }
+            
+            @include underlays();
+        }
+    }
+    //- If column is on right side add single column offset
+    .right{
+        @include media-breakpoint-up(md) {
+            @include make-col-offset(1);
+        }
+    }
+    
+}

@@ -1,0 +1,31 @@
+// PORTFOLIO DETAILS SECTION - hidden
+section.d-none
+
+    //- Cycle through all portfolio items
+    each item, idx in portfolioItems
+    
+        //- These are what is shown in the lightbox
+        div.portfolio-details-container(id=item._id) 
+            div.portfolio-details-row
+                //- Item Image
+                div.portfolio-details-column
+                    div.port-details-image
+                        img(src=item.imgLarge)
+                //- Item Details
+                div.portfolio-details-column
+                    div.port-details-content
+                        h4= item.title
+                        p= item.desc
+                    div.port-details-list
+                        ul
+                            li
+                                h6 Project Details:
+                            li
+                                span Skill :
+                                |  #{item.skills}
+                            li
+                                span Categories :
+                                |  #{item.category}
+                            li
+                                a(href=item.link) #{item.linkText} ▸
+                        

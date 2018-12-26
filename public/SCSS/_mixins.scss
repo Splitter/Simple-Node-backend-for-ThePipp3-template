@@ -1,0 +1,45 @@
+
+//The diagnal and solid underlays used through out theme
+@mixin underlays() {
+    &:after{
+        content:'';
+        z-index: 0;
+        width:50%;
+        height:60%;
+        position: absolute;
+        display:block;
+        bottom:-40px;
+        left:-40px;
+        background: repeating-linear-gradient(
+            -45deg,
+            rgba($white,0.2),
+            rgba($white,0.2) 10px,
+            rgba($white,0) 10px,
+            rgba($white,0) 20px
+        );
+    }
+    &:before{
+        content:'';
+        z-index: 0;
+        width:50%;
+        height:60%;
+        position: absolute;
+        display:block;
+        top:-40px;
+        right:-40px;
+        background:rgba($white,0.1);
+    }
+}
+
+
+//CENTERING
+@mixin center-vertical() {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin center-horizontal() {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
